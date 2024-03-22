@@ -1,0 +1,4 @@
+.spiceinit
+.venv
+xschem/*.spice
+xschem/xschemrc
