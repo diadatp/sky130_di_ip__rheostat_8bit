@@ -175,9 +175,34 @@ electrical_parameters {
 
 		+
 		name: din[7:0]
-		minimum: 00000000
 		typical: 01111111
-		maximum: 11111111
+	}
+
+	+
+	name: R_AB
+	description: TODO
+	display: R_AB
+	unit: {ohm}
+	spec {
+		typical: 50000
+		maximum: 55000 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_r_ab.spice
+		format: ascii .data null result
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 01111111
 	}
 }
 
@@ -187,7 +212,6 @@ physical_parameters {
 	+
 	name: cace_drc
 	status: skip
-
 	+
 	name: cace_lvs
 	status: skip
