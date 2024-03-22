@@ -1,0 +1,194 @@
+name: sky130_di_ip__rheostat_8bit
+description: 8-bit Rheostat
+commit: d81373348c3d0e8f79e895bbc937a43d2ab0b46e
+PDK: sky130A
+
+authorship {
+	designer: diadatp
+	company: TODO
+	creation_date: March 22, 2024
+	license: Apache 2.0
+}
+
+paths {
+	root: ..
+	schematic: xschem
+	netlist: netlist
+	simulation: ngspice
+	plots: plots
+	testbench: cace
+}
+
+pins {
+	name: dvdd
+	description: digital supply
+	type: power
+	direction: inout
+	Vmin: 1.71
+	Vmax: 1.98
+
+	+
+	name: dvss
+	description: digital ground
+	type: ground
+	direction: inout
+	Vmin: 0
+	Vmax: 0
+
+	+
+	name: din7:0
+	description: tap code
+	type: digital
+	direction: input
+	Vmin: 1.71
+	Vmax: 1.98
+
+	+
+	name: avdd
+	description: analog supply
+	type: power
+	direction: inout
+	Vmin: 3
+	Vmax: 5.5
+
+	+
+	name: avss
+	description: analog ground
+	type: ground
+	direction: inout
+	Vmin: 0
+	Vmax: 0
+
+	+
+	name: a
+	description: TODO
+	type: signal
+	direction: inout
+	Vmin: avdd
+	Vmax: avss
+
+	+
+	name: b
+	description: TODO
+	type: signal
+	direction: inout
+	Vmin: avdd
+	Vmax: avss
+
+	+
+	name: w
+	description: TODO
+	type: signal
+	direction: inout
+	Vmin: avdd
+	Vmax: avss
+}
+
+default_conditions {
+	name: dvdd
+	description: digital supply
+	display: dvdd
+	unit: V
+	typical: 1.8
+
+	+
+	name: dvss
+	description: digital ground
+	display: dvss
+	unit: V
+	typical: 0
+
+	+
+	name: din7:0
+	description: TODO
+	display: din7:0
+	unit: bit
+	typical: 01111111
+
+	+
+	name: avdd
+	description: analog supply
+	display: avdd
+	unit: V
+	typical: 3.3
+
+	+
+	name: avss
+	description: analog ground
+	display: avss
+	unit: V
+	typical: 0
+
+	+
+	name: a
+	description: TODO
+	display: a
+	unit: V
+	typical: 3.3
+
+	+
+	name: b
+	description: TODO
+	display: b
+	unit: V
+	typical: 0
+
+	+
+	name: temperature
+	description: TODO
+	display: TODO
+	unit: {degrees}C
+	minimum: -40
+	typical: 25
+	maximum: 85
+
+	+
+	name: corner
+	description: TODO
+	display: TODO
+	minimum: ss
+	typical: tt
+	maximum: ff
+}
+
+electrical_parameters {
+	name: Iavdd
+	description: TODO
+	display: Iavdd
+	unit: {micro}A
+	spec {
+		typical: 50
+		maximum: 100 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_sky130_di_ip__rheostat_8bit.spice
+		format: ascii .data null result
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		minimum: 00000000
+		typical: 01111111
+		maximum: 11111111
+	}
+}
+
+physical_parameters {
+	name: cace_area
+	status: skip
+	+
+	name: cace_drc
+	status: skip
+
+	+
+	name: cace_lvs
+	status: skip
+}
