@@ -190,8 +190,8 @@ electrical_parameters {
 	}
 	simulate {
 		tool: ngspice
-		template: tb_r_ab.spice
-		format: ascii .data null result
+		template: tb_op.spice
+		format: ascii .data null null result
 	}
 	conditions {
 		name: dvdd
@@ -204,6 +204,10 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		typical: 01111111
+
+		+
+		name: temperature
+		typical: 25
 	}
 
 	+
