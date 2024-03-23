@@ -441,6 +441,33 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		typical: 01111111
+	}
+
+	+
+	name: THD
+	description: TODO
+	display: Total Harmonic Distortion
+	unit: percent
+	spec {
+		typical: 0.5
+		maximum: 1 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_thd.spice
+		format: ascii .data null result
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 00000001
 
 		+
 		name: temperature
