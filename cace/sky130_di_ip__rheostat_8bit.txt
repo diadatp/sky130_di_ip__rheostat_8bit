@@ -335,14 +335,6 @@ electrical_parameters {
 		+
 		name: iw
 		typical: 0
-
-		+
-		name: temperature
-		typical: 25
-
-		+
-		name: corner
-		typical: tt
 	}
 
 	+
@@ -417,10 +409,6 @@ electrical_parameters {
 		+
 		name: temperature
 		typical: 25
-
-		+
-		name: corner
-		typical: tt
 	}
 }
 
