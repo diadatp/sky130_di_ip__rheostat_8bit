@@ -152,9 +152,9 @@ default_conditions {
 }
 
 electrical_parameters {
-	name: Iavdd
-	description: TODO
-	display: Iavdd
+	name: Icons
+	description: Current used during operation excluding resistor ladder.
+	display: Power Consumption
 	unit: {micro}A
 	spec {
 		typical: 50
@@ -162,8 +162,8 @@ electrical_parameters {
 	}
 	simulate {
 		tool: ngspice
-		template: tb_sky130_di_ip__rheostat_8bit.spice
-		format: ascii .data null result
+		template: tb_op.spice
+		format: ascii .data null null null result
 	}
 	conditions {
 		name: dvdd
