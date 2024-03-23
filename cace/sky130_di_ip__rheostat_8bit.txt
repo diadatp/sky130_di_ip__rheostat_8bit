@@ -181,12 +181,12 @@ electrical_parameters {
 	+
 	name: R_AB
 	description: end to end resistance between a and b terminals
-	display: R_AB
-	unit: {ohm}
+	display: End to End Resistance
+	unit: k{ohms}
 	spec {
-		minimum: 45000 fail
-		typical: 50000
-		maximum: 55000 fail
+		minimum: 45 fail
+		typical: 50
+		maximum: 55 fail
 	}
 	simulate {
 		tool: ngspice
