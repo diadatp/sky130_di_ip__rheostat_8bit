@@ -1,5 +1,8 @@
 .magicrc
 .spiceinit
 .venv
+ngspice/*.dat
+ngspice/*.data
+ngspice/*.json
 ngspice/*.spice
 xschem/xschemrc
