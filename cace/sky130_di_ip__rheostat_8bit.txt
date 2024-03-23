@@ -180,10 +180,11 @@ electrical_parameters {
 
 	+
 	name: R_AB
-	description: TODO
+	description: end to end resistance between a and b terminals
 	display: R_AB
 	unit: {ohm}
 	spec {
+		minimum: 45000 fail
 		typical: 50000
 		maximum: 55000 fail
 	}
