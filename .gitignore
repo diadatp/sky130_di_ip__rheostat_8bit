@@ -1,6 +1,7 @@
 .magicrc
 .spiceinit
 .venv
+cace/*.spice
 ngspice/*.dat
 ngspice/*.data
 ngspice/*.json
