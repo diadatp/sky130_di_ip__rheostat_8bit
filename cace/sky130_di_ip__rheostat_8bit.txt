@@ -185,6 +185,10 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		typical: 01111111
+
+		+
+		name: iw
+		typical: 0
 	}
 
 	+
@@ -200,7 +204,7 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_op.spice
-		format: ascii .data null null result
+		format: ascii .data null null result null
 	}
 	conditions {
 		name: dvdd
@@ -215,6 +219,10 @@ electrical_parameters {
 		typical: 01111111
 
 		+
+		name: iw
+		typical: 0
+
+		+
 		name: temperature
 		typical: 25
 	}
@@ -222,7 +230,7 @@ electrical_parameters {
 	+
 	name: FS_ERR
 	description: full scale error
-	display: FS_ERR
+	display: Full-Scale Error
 	unit: LSB
 	spec {
 		minimum: -4 fail
@@ -231,7 +239,7 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_op.spice
-		format: ascii .data null result
+		format: ascii .data null result null null
 	}
 	measure {
 		tool: python
@@ -250,18 +258,14 @@ electrical_parameters {
 		typical: 11111111
 
 		+
-		name: temperature
-		typical: 25
-
-		+
-		name: corner
-		typical: tt
+		name: iw
+		typical: 0
 	}
 
 	+
 	name: ZS_ERR
 	description: zero scale error
-	display: ZS_ERR
+	display: Zero-Scale Error
 	unit: LSB
 	spec {
 		typical: 1
@@ -270,7 +274,7 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_op.spice
-		format: ascii .data null result
+		format: ascii .data null result null null
 	}
 	measure {
 		tool: python
@@ -289,12 +293,8 @@ electrical_parameters {
 		typical: 00000000
 
 		+
-		name: temperature
-		typical: 25
-
-		+
-		name: corner
-		typical: tt
+		name: iw
+		typical: 0
 	}
 
 	+
@@ -310,7 +310,7 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_op.spice
-		format: ascii .data null result
+		format: ascii .data null result null null
 		collate: din[7:0]
 	}
 	measure {
@@ -328,9 +328,13 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		step: linear
-		stepsize: 64
+		stepsize: 1
 		minimum: 00000000
 		maximum: 11111111
+
+		+
+		name: iw
+		typical: 0
 
 		+
 		name: temperature
@@ -354,7 +358,7 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_op.spice
-		format: ascii .data null result
+		format: ascii .data null result null null
 		collate: din[7:0]
 	}
 	measure {
@@ -372,17 +376,13 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		step: linear
-		stepsize: 64
+		stepsize: 1
 		minimum: 00000000
 		maximum: 11111111
 
 		+
-		name: temperature
-		typical: 25
-
-		+
-		name: corner
-		typical: tt
+		name: iw
+		typical: 0
 	}
 
 	+
@@ -410,7 +410,7 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		step: linear
-		stepsize: 16
+		stepsize: 1
 		minimum: 00000000
 		maximum: 11111111
 

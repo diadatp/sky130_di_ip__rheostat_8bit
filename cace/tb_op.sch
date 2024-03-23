@@ -138,7 +138,6 @@ C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value
 C {devices/code_shown.sym} 130 -740 0 0 {name=CONTROL only_toplevel=false value=".control
 op
 set wr_singlescale
-print -i(Vavdd)
 wrdata \{simpath\}/\{filename\}_\{N\}.data v(out) (-(v(a)-v(b))/i(Va)) (-i(Vavdd))
 quit
 .endc
@@ -188,11 +187,7 @@ C {devices/vsource.sym} 120 -330 0 0 {name=Vb value="dc \{b\}"}
 C {devices/gnd.sym} 120 -280 0 0 {name=l9 lab=GND}
 C {devices/gnd.sym} -220 -360 0 0 {name=l11 lab=GND}
 C {devices/gnd.sym} -220 -400 0 0 {name=l13 lab=GND}
-C {devices/res.sym} 240 -350 0 0 {name=R1
-value=1000k
-footprint=1206
-device=resistor
-m=1}
 C {devices/gnd.sym} 240 -300 0 0 {name=l16 lab=GND}
 C {devices/lab_pin.sym} 100 -540 2 1 {name=l21 sig_type=std_logic lab=a}
 C {devices/lab_pin.sym} 120 -380 2 0 {name=l22 sig_type=std_logic lab=b}
+C {devices/isource.sym} 240 -350 0 0 {name=I0 value=\{iw\}}
