@@ -10,7 +10,7 @@ data = json.load(f)
 
 data = [float(x) for [x, y] in data]
 
-data = [((x - y) / lsb) for (x, y) in zip(data[1:], data[:-1])]
+data = [(((x - y) / lsb) - 1) for (x, y) in zip(data[1:], data[:-1])]
 
 for x in data:
   print(x)
