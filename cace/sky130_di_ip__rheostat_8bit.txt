@@ -102,7 +102,7 @@ default_conditions {
 	name: din7:0
 	description: TODO
 	display: din7:0
-	unit: bit
+	unit: 'b
 	typical: 01111111
 
 	+
