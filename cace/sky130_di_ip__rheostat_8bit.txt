@@ -134,6 +134,15 @@ default_conditions {
 	typical: 0
 
 	+
+	name: iw
+	description: max wiper current
+	display: b
+	unit: {micro}A
+	maximum: 10
+# from the 100uA/um limit of the resistors
+#	maximum: 285
+
+	+
 	name: temperature
 	description: TODO
 	display: TODO
@@ -364,6 +373,44 @@ electrical_parameters {
 		name: din[7:0]
 		step: linear
 		stepsize: 64
+		minimum: 00000000
+		maximum: 11111111
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name: R_W
+	description: TODO
+	display: Wiper Resistance
+	unit: {ohms}
+	spec {
+		typical: 100
+		maximum: 200 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_r_w.spice
+		format: ascii .data null null null null result
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		step: linear
+		stepsize: 16
 		minimum: 00000000
 		maximum: 11111111
 
