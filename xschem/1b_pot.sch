@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -41,6 +41,8 @@ N 170 50 210 50 {
 lab=vdd}
 N 210 40 210 50 {
 lab=vdd}
+N -60 -30 -30 -30 {}
+N -30 -30 -20 -0 {}
 C {xschem/base_res.sym} 0 0 0 0 {name=x1}
 C {xschem/tgate.sym} 150 -90 0 0 {name=x2 TGWn="\{TGWn\}" TGLn="\{TGLn\}" TGWp="\{TGWp\}" TGLp="\{TGLp\}"}
 C {xschem/tgate.sym} 150 90 0 0 {name=x3 TGWn="\{TGWn\}" TGLn="\{TGLn\}" TGWp="\{TGWp\}" TGLp="\{TGLp\}"}
@@ -55,3 +57,4 @@ C {devices/lab_pin.sym} 210 40 0 1 {name=p10 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} 100 -140 2 1 {name=p11 sig_type=std_logic lab=vss}
 C {devices/lab_pin.sym} 100 40 2 1 {name=p12 sig_type=std_logic lab=vss}
 C {devices/lab_pin.sym} 200 -120 0 1 {name=p8 sig_type=std_logic lab=vdd}
+C {devices/lab_pin.sym} -60 -30 2 1 {name=p24 sig_type=std_logic lab=vss}

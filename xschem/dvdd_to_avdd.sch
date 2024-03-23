@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -137,7 +137,7 @@ C {sky130_stdcells/inv_1.sym} 300 -200 0 0 {name=x8 VGND=avss VNB=avss VPB=avdd 
 C {sky130_stdcells/inv_1.sym} 300 -280 0 0 {name=x9 VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__}
 C {sky130_stdcells/inv_1.sym} 300 -40 0 0 {name=x10 VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__}
 C {sky130_stdcells/inv_1.sym} 300 -120 0 0 {name=x11 VGND=avss VNB=avss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__}
-C {lsbuflv2hv_1.sym} 140 -600 0 0 {name=x2 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
+C {lsbuflv2hv_1.sym} 140 -600 0 0 {name=x2 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__}
 C {lsbuflv2hv_1.sym} 140 -520 0 0 {name=x1 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {lsbuflv2hv_1.sym} 140 -440 0 0 {name=x3 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }
 C {lsbuflv2hv_1.sym} 140 -360 0 0 {name=x12 LVPWR=dvdd VGND=dvss VNB=dvss VPB=avdd VPWR=avdd prefix=sky130_fd_sc_hvl__ }

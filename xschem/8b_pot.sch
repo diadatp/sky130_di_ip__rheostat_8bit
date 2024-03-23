@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -263,6 +263,9 @@ N 700 900 860 900 {
 lab=w}
 N 860 480 880 480 {
 lab=w}
+N 80 60 110 60 {}
+N 80 480 110 480 {}
+N 80 900 110 900 {}
 C {devices/ipin.sym} -320 -60 0 0 {name=p0 lab=s0}
 C {devices/ipin.sym} -320 -40 0 0 {name=p0b lab=s0b}
 C {devices/ipin.sym} -320 -100 0 0 {name=p1 lab=s1}
@@ -321,3 +324,6 @@ C {xschem/tgate.sym} 660 60 0 0 {name=x7}
 C {xschem/tgate.sym} 360 690 0 0 {name=x9}
 C {xschem/tgate.sym} 660 900 0 0 {name=x10}
 C {xschem/tgate.sym} 360 1110 0 0 {name=x11}
+C {devices/lab_pin.sym} 80 60 2 1 {name=p24 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 80 480 2 1 {name=p25 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 80 900 2 1 {name=p26 sig_type=std_logic lab=vss}
