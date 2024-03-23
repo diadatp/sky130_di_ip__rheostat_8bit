@@ -207,6 +207,84 @@ electrical_parameters {
 	}
 
 	+
+	name: FS_ERR
+	description: full scale error
+	display: FS_ERR
+	unit: LSB
+	spec {
+		minimum: -4 fail
+		typical: -1
+	}
+	simulate {
+		tool: ngspice
+		template: tb_op.spice
+		format: ascii .data null result
+	}
+	measure {
+		tool: python
+		filename: fs_err.py
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 11111111
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name: ZS_ERR
+	description: zero scale error
+	display: ZS_ERR
+	unit: LSB
+	spec {
+		typical: 1
+		maximum: 4 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_op.spice
+		format: ascii .data null result
+	}
+	measure {
+		tool: python
+		filename: zs_err.py
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 00000000
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
 	name: INL
 	description: integral nonlinearity
 	display: INL
