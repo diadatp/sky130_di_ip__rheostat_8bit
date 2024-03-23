@@ -43,8 +43,8 @@ N 30 80 50 80 {
 lab=out}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 0 60 1 0 {name=Mn
 L=0.5
-W=1
-nf=1
+W=80
+nf=4
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -57,8 +57,8 @@ spiceprefix=X
 }
 C {/home/diadatp/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 0 -60 3 0 {name=Mp
 L=0.5
-W=1
-nf=1
+W=80
+nf=4
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
