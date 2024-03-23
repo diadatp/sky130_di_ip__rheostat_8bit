@@ -204,6 +204,93 @@ electrical_parameters {
 		name: din[7:0]
 		typical: 01111111
 	}
+
+	+
+	name: INL
+	description: integral nonlinearity
+	display: INL
+	unit: LSB
+	spec {
+		minimum: -1 fail
+		typical: 0.5
+		maximum: 1 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_op.spice
+		format: ascii .data null result
+	}
+	measure {
+		tool: python
+		filename: inl.py
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		step: linear
+		stepsize: 64
+		minimum: 00000000
+		maximum: 11111111
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name: DNL
+	description: differential nonlinearity
+	display: DNL
+	unit: LSB
+	spec {
+		minimum: -1 fail
+		typical: 0.5
+		maximum: 1 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_op.spice
+		format: ascii .data null result
+		collate: din[7:0]
+	}
+	measure {
+		tool: python
+		filename: dnl.py
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		step: linear
+		stepsize: 64
+		minimum: 00000000
+		maximum: 11111111
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
 }
 
 physical_parameters {
