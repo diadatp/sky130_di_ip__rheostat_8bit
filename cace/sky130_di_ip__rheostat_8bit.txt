@@ -410,6 +410,46 @@ electrical_parameters {
 		name: temperature
 		typical: 25
 	}
+
+	+
+	name: t_s
+	description: TODO
+	display: Settling Time
+	unit: {micro}s
+	spec {
+		typical: 5
+		maximum: 10 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_tran.spice
+		format: ascii .data time result
+	}
+	variables {
+		name: time
+		display: time
+		unit: s
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 01111111
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: tt
+	}
 }
 
 physical_parameters {
