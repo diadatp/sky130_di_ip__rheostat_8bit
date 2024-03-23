@@ -1,4 +1,5 @@
+.magicrc
 .spiceinit
 .venv
-xschem/*.spice
+ngspice/*.spice
 xschem/xschemrc
