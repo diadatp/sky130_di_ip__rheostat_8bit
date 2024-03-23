@@ -298,6 +298,7 @@ electrical_parameters {
 		tool: ngspice
 		template: tb_op.spice
 		format: ascii .data null result
+		collate: din[7:0]
 	}
 	measure {
 		tool: python
