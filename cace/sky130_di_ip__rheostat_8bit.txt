@@ -89,7 +89,9 @@ default_conditions {
 	description: digital supply
 	display: dvdd
 	unit: V
+	minimum: 1.71
 	typical: 1.8
+	maximum: 1.98
 
 	+
 	name: dvss
@@ -109,7 +111,9 @@ default_conditions {
 	description: analog supply
 	display: avdd
 	unit: V
+	minimum: 3
 	typical: 3.3
+	maximum: 5.5
 
 	+
 	name: avss
