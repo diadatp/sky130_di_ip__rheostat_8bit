@@ -400,7 +400,7 @@ electrical_parameters {
 		+
 		name: din[7:0]
 		step: linear
-		stepsize: 1
+		stepsize: 16
 		minimum: 00000000
 		maximum: 11111111
 
