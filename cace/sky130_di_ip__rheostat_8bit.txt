@@ -141,7 +141,8 @@ default_conditions {
 	description: Current sourced from wiper terminal
 	display: I_W
 	unit: {micro}A
-	maximum: 10
+	minimum: 0
+	maximum: 5
 # from the 100uA/um limit of the resistors
 #	maximum: 285
 
