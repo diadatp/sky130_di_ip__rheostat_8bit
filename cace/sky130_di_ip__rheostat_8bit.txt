@@ -227,7 +227,7 @@ electrical_parameters {
 
 	+
 	name: FS_ERR
-	description: full scale error
+	description: Voltage offset from avdd when tap code is set at full scale.
 	display: Full-Scale Error
 	unit: LSB
 	spec {
@@ -262,7 +262,7 @@ electrical_parameters {
 
 	+
 	name: ZS_ERR
-	description: zero scale error
+	description: Voltage offset from avss when tap code is set at zero scale.
 	display: Zero-Scale Error
 	unit: LSB
 	spec {
