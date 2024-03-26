@@ -8,9 +8,10 @@ f = open(sys.argv[1])
 
 data = json.load(f)
 
-data = [float(x) for [x, y] in data]
+x_data = [float(b) for [a, b] in data]
+y_data = [float(a) for [a, b] in data]
 
-data = [(((x - y) / lsb) - 1) for (x, y) in zip(data[1:], data[:-1])]
+data = [(((a - b) / lsb) - 1) for (a, b) in zip(y_data[1:], y_data[:-1])]
 
 for x in data:
   print(x)

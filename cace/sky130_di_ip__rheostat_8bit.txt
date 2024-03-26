@@ -347,9 +347,11 @@ electrical_parameters {
 	}
 	simulate {
 		tool: ngspice
-		template: tb_op.spice
-		format: ascii .data null result null null
-		collate: din[7:0]
+		template: tb_dnl.spice
+		format: ascii .data null din result
+	}
+	variables {
+		name: din
 	}
 	measure {
 		tool: python
