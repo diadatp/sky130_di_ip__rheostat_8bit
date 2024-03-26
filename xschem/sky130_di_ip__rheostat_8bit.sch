@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -90,13 +90,13 @@ C {devices/ipin.sym} 200 -100 2 0 {name=p4 lab=avss}
 C {devices/iopin.sym} 370 -90 0 0 {name=p5 lab=b}
 C {devices/iopin.sym} 520 -310 0 0 {name=p6 lab=w}
 C {devices/iopin.sym} 370 -530 0 0 {name=p7 lab=a}
-C {devices/ipin.sym} -160 -320 0 0 {name=din0 lab=din0}
-C {devices/ipin.sym} -160 -340 0 0 {name=din1 lab=din1}
-C {devices/ipin.sym} -160 -360 0 0 {name=din2 lab=din2}
-C {devices/ipin.sym} -160 -380 0 0 {name=din3 lab=din3}
-C {devices/ipin.sym} -160 -400 0 0 {name=din4 lab=din4}
-C {devices/ipin.sym} -160 -420 0 0 {name=din5 lab=din5}
-C {devices/ipin.sym} -160 -440 0 0 {name=din6 lab=din6}
-C {devices/ipin.sym} -160 -460 0 0 {name=din7 lab=din7}
+C {devices/ipin.sym} -160 -320 0 0 {name=din0 lab=din[0]}
+C {devices/ipin.sym} -160 -340 0 0 {name=din1 lab=din[1]}
+C {devices/ipin.sym} -160 -360 0 0 {name=din2 lab=din[2]}
+C {devices/ipin.sym} -160 -380 0 0 {name=din3 lab=din[3]}
+C {devices/ipin.sym} -160 -400 0 0 {name=din4 lab=din[4]}
+C {devices/ipin.sym} -160 -420 0 0 {name=din5 lab=din[5]}
+C {devices/ipin.sym} -160 -440 0 0 {name=din6 lab=din[6]}
+C {devices/ipin.sym} -160 -460 0 0 {name=din7 lab=din[7]}
 C {xschem/dvdd_to_avdd.sym} 10 -310 0 0 {name=x1}
 C {xschem/8b_pot.sym} 350 -310 0 0 {name=x2}
