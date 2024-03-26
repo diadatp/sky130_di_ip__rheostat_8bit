@@ -164,7 +164,7 @@ default_conditions {
 
 electrical_parameters {
 	name: Icons
-	description: Current used during operation excluding resistor ladder.
+	description: Current consumption during operation excluding resistor ladder.
 	display: Power Consumption
 	unit: {micro}A
 	spec {
@@ -179,10 +179,6 @@ electrical_parameters {
 	conditions {
 		name: dvdd
 		typical: 1.8
-
-		+
-		name: avdd
-		typical: 3.3
 
 		+
 		name: din[7:0]
