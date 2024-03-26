@@ -411,7 +411,7 @@ electrical_parameters {
 
 	+
 	name: t_s
-	description: TODO
+	description: Voltage settling time at wiper terminal to within 1 LSB when code changes from zero to full scale.
 	display: Settling Time
 	unit: {micro}s
 	spec {

@@ -137,7 +137,6 @@ C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value
 "}
 C {devices/code_shown.sym} 130 -740 0 0 {name=CONTROL only_toplevel=false value=".control
 tran 100n 10u
-plot out
 meas tran out_max MAX v(out) FROM=50n TO=10u
 let V1LsbPercent = (out_max * 254 / 255)
 meas tran ts when v(out) = V1LsbPercent
