@@ -86,7 +86,7 @@ pins {
 
 default_conditions {
 	name: dvdd
-	description: digital supply
+	description: Digital Supply
 	display: dvdd
 	unit: V
 	minimum: 1.71
@@ -95,20 +95,20 @@ default_conditions {
 
 	+
 	name: dvss
-	description: digital ground
+	description: Digital Ground
 	display: dvss
 	unit: V
 	typical: 0
 
 	+
 	name: din[7:0]
-	description: TODO
+	description: Tap Code
 	display: din[7:0]
 	typical: 01111111
 
 	+
 	name: avdd
-	description: analog supply
+	description: Analog Supply
 	display: avdd
 	unit: V
 	minimum: 3
@@ -117,29 +117,29 @@ default_conditions {
 
 	+
 	name: avss
-	description: analog ground
+	description: Analog Ground
 	display: avss
 	unit: V
 	typical: 0
 
 	+
 	name: a
-	description: TODO
+	description: Upper End Terminal Voltage
 	display: a
 	unit: V
 	typical: 3.3
 
 	+
 	name: b
-	description: TODO
+	description: Lower End Terminal Voltage
 	display: b
 	unit: V
 	typical: 0
 
 	+
 	name: iw
-	description: max wiper current
-	display: b
+	description: Current sourced from wiper terminal
+	display: I_W
 	unit: {micro}A
 	maximum: 10
 # from the 100uA/um limit of the resistors
@@ -147,8 +147,7 @@ default_conditions {
 
 	+
 	name: temperature
-	description: TODO
-	display: TODO
+	display: Temperature
 	unit: {degrees}C
 	minimum: -40
 	typical: 25
@@ -156,8 +155,7 @@ default_conditions {
 
 	+
 	name: corner
-	description: TODO
-	display: TODO
+	display: Process Corner
 	minimum: ss
 	typical: tt
 	maximum: ff
