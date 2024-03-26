@@ -64,24 +64,24 @@ pins {
 	description: high terminal
 	type: signal
 	direction: inout
-	Vmin: avdd
-	Vmax: avss
+	Vmin: avss
+	Vmax: avdd
 
 	+
 	name: b
 	description: low terminal
 	type: signal
 	direction: inout
-	Vmin: avdd
-	Vmax: avss
+	Vmin: avss
+	Vmax: avdd
 
 	+
 	name: w
 	description: wiper terminal
 	type: signal
 	direction: inout
-	Vmin: avdd
-	Vmax: avss
+	Vmin: avss
+	Vmax: avdd
 }
 
 default_conditions {
