@@ -36,7 +36,7 @@ pins {
 	Vmax: 0
 
 	+
-	name: din7:0
+	name: din[7:0]
 	description: tap code
 	type: digital
 	direction: input
@@ -99,10 +99,9 @@ default_conditions {
 	typical: 0
 
 	+
-	name: din7:0
+	name: din[7:0]
 	description: TODO
-	display: din7:0
-	unit: 'b
+	display: din[7:0]
 	typical: 01111111
 
 	+
