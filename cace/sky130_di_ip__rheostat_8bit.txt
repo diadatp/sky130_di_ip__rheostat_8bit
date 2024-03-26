@@ -21,7 +21,7 @@ paths {
 
 pins {
 	name: dvdd
-	description: digital supply
+	description: Digital Supply
 	type: power
 	direction: inout
 	Vmin: 1.71
@@ -29,7 +29,7 @@ pins {
 
 	+
 	name: dvss
-	description: digital ground
+	description: Digital Ground
 	type: ground
 	direction: inout
 	Vmin: 0
@@ -37,7 +37,7 @@ pins {
 
 	+
 	name: din[7:0]
-	description: tap code
+	description: Tap Code
 	type: digital
 	direction: input
 	Vmin: 1.71
@@ -45,7 +45,7 @@ pins {
 
 	+
 	name: avdd
-	description: analog supply
+	description: Analog Supply
 	type: power
 	direction: inout
 	Vmin: 3
@@ -53,7 +53,7 @@ pins {
 
 	+
 	name: avss
-	description: analog ground
+	description: Analog Ground
 	type: ground
 	direction: inout
 	Vmin: 0
@@ -61,7 +61,7 @@ pins {
 
 	+
 	name: a
-	description: high terminal
+	description: Upper End Terminal
 	type: signal
 	direction: inout
 	Vmin: avss
@@ -69,7 +69,7 @@ pins {
 
 	+
 	name: b
-	description: low terminal
+	description: Lower End Terminal
 	type: signal
 	direction: inout
 	Vmin: avss
@@ -77,7 +77,7 @@ pins {
 
 	+
 	name: w
-	description: wiper terminal
+	description: Wiper Terminal
 	type: signal
 	direction: inout
 	Vmin: avss
