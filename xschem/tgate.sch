@@ -55,7 +55,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {/home/diadatp/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.tech/xschem/sky130_fd_pr/pfet_g5v0d10v5.sym} 0 -60 3 0 {name=Mp
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 0 -60 3 0 {name=Mp
 L=0.5
 W=80
 nf=4
