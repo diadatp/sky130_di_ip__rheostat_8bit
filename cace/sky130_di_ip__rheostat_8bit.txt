@@ -444,9 +444,9 @@ electrical_parameters {
 	}
 
 	+
-	name: THD
+	name: thd
 	description: TODO
-	display: Total Harmonic Distortion
+	display: Total Harmonic Distortion @ 1kHz
 	unit: percent
 	spec {
 		typical: 0.5
