@@ -480,12 +480,19 @@ electrical_parameters {
 }
 
 physical_parameters {
-	name: cace_area
-	status: skip
-	+
-	name: cace_drc
-	status: skip
-	+
-	name: cace_lvs
-	status: skip
+	name: area
+	description: Total circuit layout area
+	display: area
+	evaluate {
+		tool: cace_area
+	}
+	unit: {micro}m{squared}
+#
+#	+
+#	name: drc
+#	status: skip
+#
+#	+
+#	name: lvs
+#	status: skip
 }
