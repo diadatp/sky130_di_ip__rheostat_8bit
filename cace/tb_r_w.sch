@@ -110,14 +110,14 @@ lab=out}
 N 240 -320 240 -300 {
 lab=GND}
 C {xschem/sky130_di_ip__rheostat_8bit.sym} -50 -310 0 0 {name=x1}
-C {devices/vsource.sym} -360 -30 0 0 {name=Vd0 value="dc [\{din[0]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -420 -90 0 0 {name=Vd1 value="dc [\{din[1]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -480 -150 0 0 {name=Vd2 value="dc [\{din[2]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -540 -210 0 0 {name=Vd3 value="dc [\{din[3]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -600 -270 0 0 {name=Vd4 value="dc [\{din[4]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -660 -330 0 0 {name=Vd5 value="dc [\{din[5]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -720 -390 0 0 {name=Vd6 value="dc [\{din[6]\} * \{dvdd\}]"}
-C {devices/vsource.sym} -780 -450 0 0 {name=Vd7 value="dc [\{din[7]\} * \{dvdd\}]"}
+C {devices/vsource.sym} -360 -30 0 0 {name=Vd0 value="0"}
+C {devices/vsource.sym} -420 -90 0 0 {name=Vd1 value="0"}
+C {devices/vsource.sym} -480 -150 0 0 {name=Vd2 value="0"}
+C {devices/vsource.sym} -540 -210 0 0 {name=Vd3 value="0"}
+C {devices/vsource.sym} -600 -270 0 0 {name=Vd4 value="0"}
+C {devices/vsource.sym} -660 -330 0 0 {name=Vd5 value="0"}
+C {devices/vsource.sym} -720 -390 0 0 {name=Vd6 value="0"}
+C {devices/vsource.sym} -780 -450 0 0 {name=Vd7 value="0"}
 C {devices/vsource.sym} -800 -110 0 0 {name=Vdvdd value="dc \{dvdd\}"}
 C {devices/vsource.sym} -690 -110 0 0 {name=Vavdd value="dc \{avdd\}"}
 C {devices/lab_pin.sym} -220 -420 2 1 {name=l10 sig_type=std_logic lab=avdd}
@@ -133,42 +133,31 @@ C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value
 .include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 .include \{DUT_path\}
 "}
-C {devices/code_shown.sym} 130 -740 0 0 {name=CONTROL only_toplevel=false value=".control
-op
+C {devices/code_shown.sym} 310 -630 0 0 {name=CONTROL only_toplevel=false value=".control
+print \{din[7:0]|maximum\}
 set wr_singlescale
-print i0
-wrdata \{simpath\}/\{filename\}_\{N\}.data v(out) (-(v(a)-v(b))/1) (-i(Vavdd)) ((v(a)-v(out))/\{iw\})
+let loops = 256
+let index = 0
+repeat $&loops
+  let tap_code = $&index
+  print $&loops $&index $&tap_code
+  alter @Vd0[dc] = (1.8 * ($&tap_code % 2))
+  alter @Vd1[dc] = (1.8 * (($&tap_code / 2) % 2))
+  alter @Vd2[dc] = (1.8 * (($&tap_code / 4) % 2))
+  alter @Vd3[dc] = (1.8 * (($&tap_code / 8) % 2))
+  alter @Vd4[dc] = (1.8 * (($&tap_code / 16) % 2))
+  alter @Vd5[dc] = (1.8 * (($&tap_code / 32) % 2))
+  alter @Vd6[dc] = (1.8 * (($&tap_code / 64) % 2))
+  alter @Vd7[dc] = (1.8 * (($&tap_code / 128) % 2))
+  op
+  wrdata \{simpath\}/\{filename\}_\{N\}.data $&tap_code ((v(a)-v(out))/\{iw\})
+  if ($&index < 1)
+    set appendwrite
+  end
+  let index = index + 1
+end
 quit
 .endc
-"}
-C {devices/code_shown.sym} 290 -500 0 0 {name=missing_subckts only_toplevel=false value="
-.subckt sky130_fd_sc_hvl__inv_1 A VGND VNB VPB VPWR Y
-X0 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X1 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-.ends
-
-.subckt sky130_fd_sc_hvl__lsbuflv2hv_1 A LVPWR VGND VNB VPB VPWR X
-X0 VGND a_404_1133# a_504_1221# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X1 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X2 X a_1711_885# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X3 X a_1711_885# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-X4 VGND A a_404_1133# VNB sky130_fd_pr__nfet_01v8 w=840000u l=150000u
-X5 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X6 VPWR a_1197_107# a_504_1221# VPB sky130_fd_pr__pfet_g5v0d10v5 w=420000u l=1e+06u
-X7 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X8 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X9 a_772_151# a_404_1133# VGND VNB sky130_fd_pr__nfet_01v8 w=840000u l=150000u
-X10 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X11 VGND a_404_1133# a_504_1221# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X12 LVPWR A a_404_1133# LVPWR sky130_fd_pr__pfet_01v8_hvt w=840000u l=150000u
-X13 VGND a_772_151# a_1197_107# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X14 VPWR a_504_1221# a_1711_885# VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X15 VGND a_504_1221# a_1711_885# VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-X16 VGND a_772_151# a_1197_107# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X17 a_772_151# a_404_1133# LVPWR LVPWR sky130_fd_pr__pfet_01v8_hvt w=840000u l=150000u
-X18 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X19 VPWR a_504_1221# a_1197_107# VPB sky130_fd_pr__pfet_g5v0d10v5 w=420000u l=1e+06u
-.ends
 "}
 C {devices/gnd.sym} -780 -400 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} -720 -340 0 0 {name=l2 lab=GND}

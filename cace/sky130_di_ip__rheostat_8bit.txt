@@ -450,8 +450,8 @@ electrical_parameters {
 	}
 
 	+
-	name: R_W
-	description: TODO
+	name: r_w
+	description: Wiper resistance as a funciton of tap code.
 	display: Wiper Resistance
 	unit: {ohms}
 	spec {
@@ -461,7 +461,11 @@ electrical_parameters {
 	simulate {
 		tool: ngspice
 		template: tb_r_w.spice
-		format: ascii .data null null null null result
+		format: ascii .data null null result
+	}
+	measure {
+		tool: python
+		filename: r_w.py
 	}
 	conditions {
 		name: dvdd
