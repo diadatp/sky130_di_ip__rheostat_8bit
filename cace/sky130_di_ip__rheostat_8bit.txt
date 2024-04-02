@@ -104,7 +104,10 @@ default_conditions {
 	name: din[7:0]
 	description: Tap Code
 	display: din[7:0]
-	typical: 01111111
+	step: linear
+	stepsize: 1
+	minimum: 00000000
+	maximum: 11111111
 
 	+
 	name: avdd
