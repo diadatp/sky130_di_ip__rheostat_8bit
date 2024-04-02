@@ -179,4 +179,4 @@ C {devices/gnd.sym} -220 -400 0 0 {name=l13 lab=GND}
 C {devices/gnd.sym} 240 -300 0 0 {name=l16 lab=GND}
 C {devices/lab_pin.sym} 100 -540 2 1 {name=l21 sig_type=std_logic lab=a}
 C {devices/lab_pin.sym} 120 -380 2 0 {name=l22 sig_type=std_logic lab=b}
-C {devices/isource.sym} 420 -620 0 0 {name=I0 value=\{iw\}}
+C {devices/isource.sym} 240 -350 0 0 {name=I0 value=\{iw\}}
