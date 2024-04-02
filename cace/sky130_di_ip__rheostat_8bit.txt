@@ -233,6 +233,8 @@ electrical_parameters {
 	spec {
 		minimum: -4 fail
 		typical: -1
+		# below indicates sim failure
+		maximum: 0 fail
 	}
 	simulate {
 		tool: ngspice
@@ -266,6 +268,8 @@ electrical_parameters {
 	display: Zero-Scale Error
 	unit: LSB
 	spec {
+		# below indicates sim failure
+		minimum: 0 fail
 		typical: 1
 		maximum: 4 fail
 	}
