@@ -350,9 +350,9 @@ electrical_parameters {
 	}
 
 	+
-	name: INL
+	name: inl_mc_mm
 	description: integral nonlinearity
-	display: INL
+	display: INL MC MM
 	unit: LSB
 	spec {
 		minimum: -1 fail
@@ -361,9 +361,11 @@ electrical_parameters {
 	}
 	simulate {
 		tool: ngspice
-		template: tb_op.spice
-		format: ascii .data null result null null
-		collate: din[7:0]
+		template: tb_dnl.spice
+		format: ascii .data null din result
+	}
+	variables {
+		name: din
 	}
 	measure {
 		tool: python
@@ -387,12 +389,20 @@ electrical_parameters {
 		+
 		name: iw
 		typical: 0
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: mc
 	}
 
 	+
-	name: DNL
+	name: dnl_mc_mm
 	description: differential nonlinearity
-	display: DNL
+	display: DNL MC MM
 	unit: LSB
 	spec {
 		minimum: -1 fail
@@ -429,6 +439,14 @@ electrical_parameters {
 		+
 		name: iw
 		typical: 0
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: mc
 	}
 
 	+

@@ -1,14 +1,19 @@
 import sys
 import json
 
-# TODO this needs to be extracted from the results file
-lsb = (3.3 / 255)
+from numpy.polynomial import Polynomial
+from numpy.polynomial.polynomial import polyval
 
 f = open(sys.argv[1])
 
 data = json.load(f)
 
-data = [(((3.3 * int(y, 2) / 255) - float(x)) / lsb) for [x, y] in data]
+x_data = [float(b) for [a, b] in data]
+y_data = [float(a) for [a, b] in data]
+
+fit = Polynomial.fit(x_data, y_data, 1).convert()
+
+data = [(float(y) - polyval(float(x), fit.coef)) for [y, x] in data]
 
 for x in data:
   print(x)
