@@ -133,8 +133,7 @@ C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value
 .include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 .include \{DUT_path\}
 "}
-C {devices/code_shown.sym} 130 -740 0 0 {name=CONTROL only_toplevel=false value="
-.control
+C {devices/code_shown.sym} 130 -740 0 0 {name=CONTROL only_toplevel=false value=".control
 op
 set wr_singlescale
 print i0
