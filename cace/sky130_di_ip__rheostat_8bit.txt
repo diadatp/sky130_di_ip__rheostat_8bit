@@ -160,7 +160,7 @@ default_conditions {
 	+
 	name: corner
 	display: Process Corner
-	enumerate: ss sf tt fs ff
+	enumerate: ss sf tt fs ff ll lh hl hh
 
 	+
 	name: iterations
