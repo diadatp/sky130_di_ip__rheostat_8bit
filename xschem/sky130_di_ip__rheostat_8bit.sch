@@ -83,6 +83,20 @@ N -160 -300 -160 -280 {
 lab=dvss}
 N -160 -500 -160 -480 {
 lab=dvdd}
+N 640 -280 640 -240 {
+lab=avss}
+N 640 -240 660 -240 {
+lab=avss}
+N 640 -380 640 -340 {
+lab=avss}
+N 620 -310 620 -240 {
+lab=avss}
+N 620 -240 640 -240 {
+lab=avss}
+N 620 -380 620 -310 {
+lab=avss}
+N 620 -380 640 -380 {
+lab=avss}
 C {devices/ipin.sym} 200 -520 2 0 {name=p1 lab=avdd}
 C {devices/ipin.sym} -160 -500 0 0 {name=p2 lab=dvdd}
 C {devices/ipin.sym} -160 -280 0 0 {name=p3 lab=dvss}
@@ -100,3 +114,9 @@ C {devices/ipin.sym} -160 -440 0 0 {name=din6 lab=din[6]}
 C {devices/ipin.sym} -160 -460 0 0 {name=din7 lab=din[7]}
 C {xschem/dvdd_to_avdd.sym} 10 -310 0 0 {name=x1}
 C {xschem/8b_pot.sym} 350 -310 0 0 {name=x2}
+C {sky130_fd_pr/res_high_po_2p85.sym} 640 -310 0 0 {name=Rdummy[153:0]
+L=2.85
+model=res_high_po_2p85
+spiceprefix=X
+mult=1}
+C {devices/ipin.sym} 660 -240 2 0 {name=Rdummy1[17:0] lab=avss}
