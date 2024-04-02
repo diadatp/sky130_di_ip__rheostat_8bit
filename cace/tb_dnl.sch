@@ -136,13 +136,14 @@ C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value
 .include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 .include \{DUT_path\}
 "}
-C {devices/code_shown.sym} 50 -1120 0 0 {name=CONTROL only_toplevel=false value=".control
+C {devices/code_shown.sym} 310 -630 0 0 {name=CONTROL only_toplevel=false value=".control
 print \{din[7:0]|maximum\}
 set wr_singlescale
 let loops = 256
 let index = 0
 repeat $&loops
   let tap_code = $&index
+  print $&loops $&index $&tap_code
   alter @Vd0[dc] = (1.8 * ($&tap_code % 2))
   alter @Vd1[dc] = (1.8 * (($&tap_code / 2) % 2))
   alter @Vd2[dc] = (1.8 * (($&tap_code / 4) % 2))
@@ -152,7 +153,7 @@ repeat $&loops
   alter @Vd6[dc] = (1.8 * (($&tap_code / 64) % 2))
   alter @Vd7[dc] = (1.8 * (($&tap_code / 128) % 2))
   op
-  wrdata \{simpath\}/\{filename\}_\{N\}.data tap_code v(out)
+  wrdata \{simpath\}/\{filename\}_\{N\}.data tap_code v(out)*255/v(a)
   if ($&index < 1)
     set appendwrite
   end
