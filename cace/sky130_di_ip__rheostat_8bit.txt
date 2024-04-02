@@ -236,6 +236,46 @@ electrical_parameters {
 	}
 
 	+
+	name: R_AB_mc
+	description: end to end resistance between a and b terminals
+	display: End to End Resistance MC
+	unit: k{ohms}
+	spec {
+		minimum: 45 fail
+		typical: 50
+		maximum: 55 fail
+	}
+	simulate {
+		tool: ngspice
+		template: tb_op_mc.spice
+		format: ascii .data null null result null
+	}
+	conditions {
+		name: dvdd
+		typical: 1.8
+
+		+
+		name: avdd
+		typical: 3.3
+
+		+
+		name: din[7:0]
+		typical: 01111111
+
+		+
+		name: iw
+		typical: 0
+
+		+
+		name: temperature
+		typical: 25
+
+		+
+		name: corner
+		typical: mc
+	}
+
+	+
 	name: FS_ERR
 	description: Voltage offset from avdd when tap code is set at full scale.
 	display: Full-Scale Error
