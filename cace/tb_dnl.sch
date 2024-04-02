@@ -160,35 +160,6 @@ end
 quit
 .endc
 "}
-C {devices/code_shown.sym} 290 -500 0 0 {name=missing_subckts only_toplevel=false value="
-.subckt sky130_fd_sc_hvl__inv_1 A VGND VNB VPB VPWR Y
-X0 VPWR A Y VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X1 VGND A Y VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-.ends
-
-.subckt sky130_fd_sc_hvl__lsbuflv2hv_1 A LVPWR VGND VNB VPB VPWR X
-X0 VGND a_404_1133# a_504_1221# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X1 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X2 X a_1711_885# VPWR VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X3 X a_1711_885# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-X4 VGND A a_404_1133# VNB sky130_fd_pr__nfet_01v8 w=840000u l=150000u
-X5 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X6 VPWR a_1197_107# a_504_1221# VPB sky130_fd_pr__pfet_g5v0d10v5 w=420000u l=1e+06u
-X7 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X8 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X9 a_772_151# a_404_1133# VGND VNB sky130_fd_pr__nfet_01v8 w=840000u l=150000u
-X10 a_504_1221# a_404_1133# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X11 VGND a_404_1133# a_504_1221# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X12 LVPWR A a_404_1133# LVPWR sky130_fd_pr__pfet_01v8_hvt w=840000u l=150000u
-X13 VGND a_772_151# a_1197_107# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X14 VPWR a_504_1221# a_1711_885# VPB sky130_fd_pr__pfet_g5v0d10v5 w=1.5e+06u l=500000u
-X15 VGND a_504_1221# a_1711_885# VNB sky130_fd_pr__nfet_g5v0d10v5 w=750000u l=500000u
-X16 VGND a_772_151# a_1197_107# VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X17 a_772_151# a_404_1133# LVPWR LVPWR sky130_fd_pr__pfet_01v8_hvt w=840000u l=150000u
-X18 a_1197_107# a_772_151# VGND VNB sky130_fd_pr__nfet_g5v0d10v5 w=1.5e+06u l=500000u
-X19 VPWR a_504_1221# a_1197_107# VPB sky130_fd_pr__pfet_g5v0d10v5 w=420000u l=1e+06u
-.ends
-"}
 C {devices/vsource.sym} 180 -510 0 0 {name=Va value="dc \{a\}"}
 C {devices/gnd.sym} -780 -400 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} -720 -340 0 0 {name=l2 lab=GND}
