@@ -130,6 +130,7 @@ C {devices/lab_pin.sym} 120 -400 3 1 {name=l19 sig_type=std_logic lab=out}
 C {devices/code_shown.sym} -770 -700 0 0 {name=NGSPICE only_toplevel=false value="
 .option TEMP=\\\{temperature\\\}
 .option warn=1
+.option SEED=[\{seed=12345\} + \{iterations=0\}]
 
 .lib \{PDK_ROOT\}/\{PDK\}/libs.tech/combined/sky130.lib.spice \{corner\}
 .include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
