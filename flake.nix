@@ -37,7 +37,7 @@
           ];
         runScript = "bash";
         shellHook = ''
-          export PDK_ROOT=~/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/
+          export PDK_ROOT=~/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a
           SOURCE_DATE_EPOCH=$(date +%s)
           VENV=.venv
           if test ! -d $VENV; then
